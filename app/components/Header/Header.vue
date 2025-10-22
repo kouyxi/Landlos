@@ -92,10 +92,10 @@ const toggleMenu = () => {
   align-items: center;
   background: var(--black);
   height: auto;
-  padding: 15px clamp(20px, 5vw, 60px);
+  padding: 8px clamp(20px, 5vw, 60px);
   margin: 0;
   gap: 20px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 2px solid rgba(237, 235, 221, 0.15);
   backdrop-filter: blur(10px);
   animation: expandFromCenter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
@@ -245,19 +245,7 @@ const toggleMenu = () => {
   width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .nav-links {
-    gap: 15px;
-    padding: 10px 20px;
-  }
-
-  .nav-links p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1224px) {
   .desktop-nav {
     display: none !important;
   }

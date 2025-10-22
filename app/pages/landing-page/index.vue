@@ -1,38 +1,31 @@
 <script setup lang="ts">
 import Header from "~/components/Header/Header.vue";
 </script>
-
 <template>
-  <Header />
-
-  <div class="Img">
-    <h1>Sua história começa aqui</h1>
-  </div>
-
-  <div class="Corpo2">
-    <div class="Quadrado1">
-      <h1>De novato a Lenda!</h1>
-
-      <p>
-        Encare desafios, <strong>ganhe prêmios</strong> e conquiste seu lugar no
-        topo do <strong>Ranking</strong> Global de Cobblemon.
-      </p>
-
-      <p class="ComeceJa">Comece já</p>
-      <img src="/images/placeholder.gif" />
+  <div class="wrapper">
+    <Header />
+    <div class="Img">
+      <h1>Sua história começa aqui</h1>
+    </div>
+    <div class="Corpo2">
+      <div class="Quadrado1">
+        <h1>De novato a Lenda!</h1>
+        <p>
+          Encare desafios, <strong>ganhe prêmios</strong> e conquiste seu lugar
+          no topo do <strong>Ranking</strong> Global de Cobblemon.
+        </p>
+        <p class="ComeceJa">Comece já</p>
+        <img src="/images/placeholder.gif" />
+      </div>
     </div>
   </div>
 </template>
-
 <style>
 @font-face {
   font-family: "Minercraftory";
   src: url("/fonts/Minercraftory.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-body {
 }
 
 strong {
@@ -45,6 +38,10 @@ body {
   background: linear-gradient(135deg, #000000 45%, #521a14 55%);
   margin: 0;
   padding: 0;
+}
+
+.wrapper {
+  padding: 0px 32px;
 }
 
 .ComeceJa {
@@ -65,7 +62,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
   min-height: calc(100vh - 700px);
   overflow-x: hidden;
 }
@@ -90,9 +86,8 @@ body {
   background-color: black;
   bottom: 130px;
   right: 20px;
-  width: 200px;
-  height: 350px;
   width: 300px;
+  height: 350px;
 }
 
 p,
@@ -102,10 +97,7 @@ h1 {
 }
 
 .Img {
-  background-image: url("/images/placeholder.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   margin: 0;
   height: 700px;
   width: 100%;
@@ -114,12 +106,33 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.Img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/images/lg-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(5px);
+  z-index: 0;
 }
 
 .Img h1 {
-  color: red;
+  color: var(--red);
   margin: 0;
   text-align: center;
-  font-size: clamp(20px, 4vw, 32px);
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+  text-shadow:
+    3px 3px 0px black,
+    4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 </style>
